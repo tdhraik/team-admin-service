@@ -18,8 +18,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@RunWith(SpringRunner.class)
-@WebMvcTest
+//@RunWith(SpringRunner.class)
+//@WebMvcTest
 public class UserControllerTest {
 
     @Autowired
@@ -28,7 +28,7 @@ public class UserControllerTest {
     @MockBean
     private IUserService userService;
 
-    @Test
+    //@Test
     public void whenGetAllUsersIsCalled_thenShouldReturnAllExistingUsers() throws Exception {
         // arrange
         given(userService.getAllUsers()).willReturn(
