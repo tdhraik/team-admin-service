@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import me.remind.teamadmin.entity.User;
 import me.remind.teamadmin.entity.repository.UserRepository;
 import me.remind.teamadmin.exception.EntityNotFoundException;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,6 +35,7 @@ public class UserService implements IUserService {
     }
 
     @Override
+    @CacheEvict(value = "user-repositories", key="#id")
     public User updateUser(Long id, User updateUser) {
         var user = getUser(id);
         updateUser.setId(user.getId());
@@ -41,6 +43,7 @@ public class UserService implements IUserService {
     }
 
     @Override
+    @CacheEvict(value = "user-repositories", key="#id")
     public void removeUser(Long id) {
         var user = getUser(id);
         userRepository.delete(user);

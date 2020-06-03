@@ -14,7 +14,7 @@ Service to manage team members data.
 2) cd team-admin-service/ && ./mvnw clean install
 3) Run application locally using ./mvnw spring-boot:run
 
-Or Build it without maven: 
+Or Build and Run it without maven: 
 ``` shell
 ./mvnw package
 java -jar target/team-admin-service-1.0-SNAPSHOT.jar
@@ -26,16 +26,14 @@ java -jar target/team-admin-service-1.0-SNAPSHOT.jar
 3) Run the following commands...
  ```
  docker image build -t team-admin-service .
- docker run -p 8080:8080 team-admin-service
+ docker run -p 8091:8091 team-admin-service
  ```
- 
- 
  
 Application should be up and running now.. 
 
 ## SWAGGER
-1) Access the swagger documentation and access the end points [SWAGGER UI](http://localhost:8091/swagger-ui.html) 
+1) Access the swagger documentation and the end points [here](http://localhost:8091/swagger-ui.html) 
 
-2) Access in-memory H2 database, [H2-Console](http://localhost:8091/h2) 
+2) Access in-memory H2 database, [here](http://localhost:8091/h2) 
 
 
